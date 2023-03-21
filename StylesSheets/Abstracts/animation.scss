@@ -1,0 +1,30 @@
+@keyframes slideUpDown {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  25% {
+    transform: translate(-50%, 5%);
+    opacity: 0;
+  }
+
+  75% {
+    transform: translate(-50%, -110%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-20rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
