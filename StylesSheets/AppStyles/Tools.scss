@@ -1,0 +1,52 @@
+.tools {
+  margin: 10rem 0 12rem;
+  display: grid;
+  place-items: center;
+  & h3 {
+    width: fit-content;
+    background-color: rgba($tertiary-light-color, 0.1);
+    padding: 0.7rem 2rem;
+    border-radius: 1rem;
+    color: $tertiary-color;
+    font-size: 1.6rem;
+    & span {
+      margin-right: 2rem;
+    }
+  }
+  &__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: $secondary-dark-color;
+  }
+  h4 {
+    font-size: 3rem;
+    color: $secondary-light-color;
+    margin: 4rem 0;
+    letter-spacing: 0.2rem;
+    word-spacing: 0.2rem;
+  }
+  h6 {
+    font-size: 1.5rem;
+    color: $secondary-dark-color;
+    margin-bottom: 3.5rem;
+    letter-spacing: 0.1rem;
+    word-spacing: 0.1rem;
+  }
+  &__list {
+    list-style: none;
+    display: flex;
+    margin-bottom: 6rem;
+  }
+  &__item {
+    margin: 0 1.5rem;
+    background-color: rgba($secondary-color, 0.2);
+    padding: 1.5rem;
+    border-radius: 50%;
+    & svg {
+      width: 4rem;
+      height: 4rem;
+      cursor: pointer;
+      color: inherit;
+    }
+  }
+}

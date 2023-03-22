@@ -1,0 +1,72 @@
+.tracks {
+  margin: 10rem 0;
+  padding: 8rem;
+  border-bottom: 0.01rem solid rgba($tertiary-light-color, 0.5);
+  border-top: 0.01rem solid rgba($tertiary-light-color, 0.5);
+  display: grid;
+  place-items: center;
+
+  &__up,
+  &__down {
+    width: 70rem;
+    display: flex;
+    text-align: center;
+  }
+
+  &__up {
+    justify-content: space-around;
+
+    & div {
+      flex-basis: 30%;
+      border: 0.1rem solid rgba($tertiary-light-color, 0.5);
+      border-radius: 0.6rem;
+      padding: 4rem 0.5rem;
+      &:nth-child(2) {
+        background-color: rgba($tertiary-light-color, 0.2);
+        border: none;
+      }
+
+      & h3 {
+        font-size: 1.2rem;
+        margin: 1rem 0 0.5rem;
+        letter-spacing: 0.1rem;
+        font-weight: 300;
+        color: $secondary-dark-color;
+      }
+      & h2 {
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: $secondary-light-color;
+      }
+    }
+    &--icon {
+      width: 4rem;
+      height: 4rem;
+      fill: $tertiary-color;
+    }
+  }
+  &__down {
+    justify-content: space-between;
+    padding: 1.5rem 3rem;
+    margin-top: 2.5rem;
+    background-color: rgba($tertiary-light-color, 0.1);
+    border-radius: 5rem;
+
+    & div:not(:last-of-type) {
+      margin-right: 2.5rem;
+    }
+    & p {
+      color: $tertiary-dark-color;
+      font-size: 1.4rem;
+      font-family: "Pacifico", cursive;
+      letter-spacing: 0.15rem;
+    }
+    & h2 {
+      margin-top: 0.7rem;
+      color: $tertiary-dark-color;
+      font-size: 1.7rem;
+      font-family: "Yatra One", cursive;
+      letter-spacing: 0.15rem;
+    }
+  }
+}

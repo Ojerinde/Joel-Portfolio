@@ -1,0 +1,39 @@
+.about {
+  padding: 0 8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__left {
+    & img {
+      border-radius: 50%;
+    }
+  }
+  &__right {
+    flex-basis: 65%;
+    h6 {
+      color: $tertiary-color;
+      font-size: 2rem;
+    }
+    h1 {
+      margin: 1.5rem 0;
+      color: $secondary-color;
+      font-family: "Pacifico", cursive;
+      letter-spacing: 0.3rem;
+      font-size: 2rem;
+    }
+    p {
+      color: $secondary-light-color;
+      margin: 1.7rem 0;
+      font-size: 1.5rem;
+      & span {
+        margin-right: 1rem;
+      }
+    }
+  }
+  &__icon {
+    width: 2rem;
+    height: 1.5rem;
+    fill: $tertiary-light-color;
+  }
+}
