@@ -1,6 +1,5 @@
 .projects {
-  margin: 8rem 0;
-  padding: 0 8rem;
+  padding: 8rem 8rem 15rem;
   & h3 {
     width: fit-content;
     background-color: rgba($tertiary-light-color, 0.1);
@@ -26,11 +25,57 @@
   }
   &__list {
     list-style: none;
+    display: grid;
+    //grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(
+      4,
+      1fr
+    ); //to make it responsive as the width get smaller
+    gap: 4rem;
+    justify-content: space-between;
   }
   &__item {
-    margin: 2rem auto;
-    display: flex;
-    align-items: center;
-    width: 70rem;
+    border: 0.1rem solid rgba($tertiary-light-color, 0.3);
+    padding: 2rem;
+    border-radius: 1rem;
+
+    &:nth-child(2),
+    &:nth-child(4),
+    &:nth-child(6),
+    &:nth-child(8) {
+      background-color: rgba($tertiary-light-color, 0.3);
+      border: none;
+    }
+
+    & h1 {
+      color: $secondary-color;
+      font-size: 1.8rem;
+      letter-spacing: 0.3rem;
+    }
+    & p {
+      color: $secondary-dark-color;
+      margin: 1rem 0;
+      font-size: 1.4rem;
+      text-align: left;
+    }
+    & ul {
+      margin: 1rem 0 2rem;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+
+      & li {
+        margin-right: 1rem;
+        background-color: rgba($tertiary-dark-color, 0.4);
+        font-size: 1.4rem;
+        color: $secondary-light-color;
+        padding: 0.6rem 1.3rem;
+        border-radius: 0.6rem;
+      }
+    }
+  }
+  &__pagination {
+    margin-top: 2rem;
   }
 }

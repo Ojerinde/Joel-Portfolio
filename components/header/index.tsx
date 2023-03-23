@@ -42,7 +42,7 @@ const Header: React.FC = () => {
         </figure>
         <div className="header__right">
           <p>
-            Download CV{" "}
+            Download CV
             <span>
               <FaFileDownload className="header__right--icon" />
             </span>

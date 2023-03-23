@@ -1,0 +1,71 @@
+.blogs {
+  padding: 4rem 8rem;
+  &__header {
+    display: grid;
+    place-items: center;
+    margin-bottom: 6rem;
+  }
+  & h3 {
+    width: fit-content;
+    background-color: rgba($tertiary-light-color, 0.1);
+    padding: 0.7rem 2rem;
+    border-radius: 1rem;
+    color: $tertiary-color;
+    font-size: 1.6rem;
+    & span {
+      margin-right: 2rem;
+    }
+  }
+  &__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: $secondary-dark-color;
+  }
+
+  &__list {
+    list-style: none;
+  }
+  &__item {
+    width: 60%;
+    margin: 10rem auto;
+    display: flex;
+
+    &--left {
+      flex-basis: 50%;
+      & h1 {
+        color: $tertiary-color;
+        font-size: 1.2rem;
+      }
+      & h2 {
+        color: $secondary-color;
+        margin: 1rem 0 2rem;
+        font-size: 1.6rem;
+      }
+      & p {
+        width: 125%;
+        margin: 1rem 0;
+        font-size: 1.4rem;
+        color: $secondary-light-color;
+        padding: 1.5rem;
+        line-height: 2.5rem;
+        border-radius: 1rem;
+        background-color: rgba($secondary-light-color, 0.3);
+      }
+    }
+    &--right {
+      flex-basis: 50%;
+      box-shadow: 1rem 1rem 15rem rgba($tertiary-light-color, 0.5);
+      background-color: rgba($tertiary-color, 0.3);
+      height: 20rem;
+      position: relative;
+    }
+
+    & img {
+      position: absolute;
+      top: 4rem;
+      left: 4rem;
+      border-top-left-radius: 3rem;
+      opacity: 0.6;
+    }
+  }
+}

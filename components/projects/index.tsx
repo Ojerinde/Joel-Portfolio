@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import ProjectItem from "./ProjectItem";
 import ProjectsBank from "./ProjectsBank";
 import { BsProjector } from "react-icons/bs";
+import Pagination from "../Pagination/Pagination";
 
 const Projects: React.FC = () => {
+  const [start, setStart] = useState<number>(1);
+  const changePageHandler = (newStart: number) => {
+    setStart((prev) => newStart);
+  };
   return (
     <section className="projects">
       <h3>
@@ -20,11 +25,13 @@ const Projects: React.FC = () => {
             id={project.id}
             name={project.name}
             docUrl={project.docUrl}
+            stacks={project.stacks}
             imgUrl={project.imgUrl}
             description={project.description}
           />
         ))}
       </ul>
+      <Pagination itemPerPage={8} totalItem={58} onChange={changePageHandler} />
     </section>
   );
 };

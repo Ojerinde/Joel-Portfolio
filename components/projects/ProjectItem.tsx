@@ -5,18 +5,20 @@ const ProjectItem: React.FC<ProjectsObj> = ({
   id,
   name,
   docUrl,
+  stacks,
   imgUrl,
   description,
 }) => {
   return (
     <div className="projects__item">
-      <div className="projects__">
-        <h1>{name}</h1>
-        <p>{description}</p>
-      </div>
-      <div className="projects__">
-        <Image src={imgUrl} alt={name} fill />
-      </div>
+      <h1>{name}</h1>
+      <p>{description?.slice(0, 150)}...</p>
+      <ul>
+        {stacks.map((stack, index) => (
+          <li key={index}>{stack}</li>
+        ))}
+      </ul>
+      <Image src={imgUrl} alt={name} width={225} height={150} />
     </div>
   );
 };
