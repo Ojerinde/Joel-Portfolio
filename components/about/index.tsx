@@ -6,7 +6,7 @@ import { GiBurningPassion } from "react-icons/gi";
 import { MdCastForEducation, MdCleaningServices } from "react-icons/md";
 const AboutMe: React.FC = () => {
   return (
-    <section className="about">
+    <section className="about" id="about">
       <figure className="about__left">
         {" "}
         <Image

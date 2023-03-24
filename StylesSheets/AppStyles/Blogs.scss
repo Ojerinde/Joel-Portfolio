@@ -42,7 +42,7 @@
         font-size: 1.6rem;
       }
       & p {
-        width: 125%;
+        width: 118%;
         margin: 1rem 0;
         font-size: 1.4rem;
         color: $secondary-light-color;
@@ -54,7 +54,7 @@
     }
     &--right {
       flex-basis: 50%;
-      box-shadow: 1rem 1rem 15rem rgba($tertiary-light-color, 0.5);
+      box-shadow: 1rem 1rem 8rem rgba($tertiary-light-color, 0.5);
       background-color: rgba($tertiary-color, 0.3);
       height: 20rem;
       position: relative;

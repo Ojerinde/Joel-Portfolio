@@ -5,7 +5,7 @@ import { FaBlog } from "react-icons/fa";
 
 const Blogs: React.FC = () => {
   return (
-    <section className="blogs">
+    <section className="blogs" id="blogs">
       <div className="blogs__header">
         <h3>
           <span>

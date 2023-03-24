@@ -20,33 +20,33 @@ const ProficientToolsBank: ToolsObj[] = [
     imgUrl: "/images/tools/sass.png",
   },
   {
-    id: 3,
+    id: 4,
     name: "JS",
     docUrl: "",
     imgUrl: "/images/tools/js.png",
   },
   {
-    id: 3,
+    id: 5,
     name: "TS",
     docUrl: "",
     imgUrl: "/images/tools/ts.png",
   },
-  { id: 4, name: "ReactJS", docUrl: "", imgUrl: "/images/tools/react.png" },
+  { id: 6, name: "ReactJS", docUrl: "", imgUrl: "/images/tools/react.png" },
   {
-    id: 5,
+    id: 7,
     name: "NextJs",
     docUrl: "",
     imgUrl: "/images/tools/nextjs.png",
   },
-  { id: 6, name: "VueJs", docUrl: "", imgUrl: "/images/tools/vue.png" },
+  { id: 8, name: "VueJs", docUrl: "", imgUrl: "/images/tools/vue.png" },
   {
-    id: 7,
+    id: 9,
     name: "Python",
     docUrl: "",
     imgUrl: "/images/tools/python.png",
   },
-  { id: 8, name: "GitHub", docUrl: "", imgUrl: "/images/tools/github.png" },
-  { id: 9, name: "Redux", docUrl: "", imgUrl: "/images/tools/redux.png" },
+  { id: 10, name: "GitHub", docUrl: "", imgUrl: "/images/tools/github.png" },
+  { id: 11, name: "Redux", docUrl: "", imgUrl: "/images/tools/redux.png" },
 ];
 export default ProficientToolsBank;
 

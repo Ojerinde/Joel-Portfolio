@@ -22,13 +22,19 @@ const Header: React.FC = () => {
           <h4>Frontend Developer</h4>
           <ul className="header__icons">
             <li>
-              <FaGithubSquare className="header__icon header__icon--1" />
+              <a href="https://github.com/Ojerinde">
+                <FaGithubSquare className="header__icon header__icon--1" />
+              </a>
             </li>
             <li>
-              <FaTwitterSquare className="header__icon header__icon--2" />
+              <a href="https://twitter.com/Joel_Ojerinde">
+                <FaTwitterSquare className="header__icon header__icon--2" />
+              </a>
             </li>
             <li>
-              <FaLinkedin className="header__icon header__icon--3" />
+              <a href="https://www.linkedin.com/in/ojerinde/">
+                <FaLinkedin className="header__icon header__icon--3" />
+              </a>
             </li>
           </ul>
         </div>
@@ -41,18 +47,22 @@ const Header: React.FC = () => {
           />
         </figure>
         <div className="header__right">
-          <p>
-            Download CV
-            <span>
-              <FaFileDownload className="header__right--icon" />
-            </span>
-          </p>
-          <p>
-            <span>
-              <FaWhatsapp className="header__right--icon" />
-            </span>
-            {"Let's talk"}
-          </p>
+          <a href="CV.pdf" download>
+            <p>
+              Download CV
+              <span>
+                <FaFileDownload className="header__right--icon" />
+              </span>
+            </p>
+          </a>
+          <a href="https://wa.me/2348143368703" target="_blank">
+            <p>
+              <span>
+                <FaWhatsapp className="header__right--icon" />
+              </span>
+              {"Let's talk"}
+            </p>
+          </a>
         </div>
       </div>
     </header>

@@ -4,7 +4,8 @@ import { ProjectsObj } from "./ProjectsBank";
 const ProjectItem: React.FC<ProjectsObj> = ({
   id,
   name,
-  docUrl,
+  liveUrl,
+  githubUrl,
   stacks,
   imgUrl,
   description,
@@ -12,7 +13,7 @@ const ProjectItem: React.FC<ProjectsObj> = ({
   return (
     <div className="projects__item">
       <h1>{name}</h1>
-      <p>{description?.slice(0, 150)}...</p>
+      <p>{description?.slice(0, 80)}...</p>
       <ul>
         {stacks.map((stack, index) => (
           <li key={index}>{stack}</li>

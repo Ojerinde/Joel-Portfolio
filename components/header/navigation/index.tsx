@@ -1,7 +1,10 @@
 import Image from "next/image";
 import React from "react";
 const Navigation: React.FC = () => {
-  const scrollTo = (to: string) => {};
+  const scrollTo = (to: string) => {
+    const section = document?.querySelector(to) as HTMLElement;
+    section.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <>
       <nav className="navigation desktop">
@@ -16,8 +19,9 @@ const Navigation: React.FC = () => {
         <ul>
           <li onClick={scrollTo.bind(null, "#home")}>Home</li>
           <li onClick={scrollTo.bind(null, "#about")}>About</li>
-          <li onClick={scrollTo.bind(null, "#skills")}>Portfolio</li>
-          <li onClick={scrollTo.bind(null, "#blog")}>Blog</li>
+          <li onClick={scrollTo.bind(null, "#portfolio")}>Portfolio</li>
+          <li onClick={scrollTo.bind(null, "#tools")}>Tools</li>
+          <li onClick={scrollTo.bind(null, "#blogs")}>Blogs</li>
           <li onClick={scrollTo.bind(null, "#contact")}>Contact</li>
         </ul>
       </nav>

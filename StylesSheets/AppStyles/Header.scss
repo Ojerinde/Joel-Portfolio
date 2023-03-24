@@ -1,6 +1,27 @@
+/* width */
+::-webkit-scrollbar {
+  width: 1.4rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $secondary-color;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $primary-light-color;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $primary-color;
+  cursor: pointer;
+}
+
 .header {
   &__main {
-    margin-top: 8rem;
+    margin: 8rem 0 10rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -39,26 +60,30 @@
     width: 3.5rem;
     cursor: pointer;
     color: $secondary-color;
+    transition: all 0.3s;
 
     &--1 {
       &:hover {
-        color: blue;
+        color: #3e3d3d;
       }
     }
     &--2 {
       &:hover {
-        color: red;
+        color: #00acee;
       }
     }
     &--3 {
       &:hover {
-        color: green;
+        color: #00acee;
       }
     }
   }
   &__right {
     text-align: right;
-    p {
+    & a:link {
+      text-decoration: none;
+    }
+    & p {
       font-size: 1.7rem;
       color: $tertiary-color;
       margin: 1.5rem 0;

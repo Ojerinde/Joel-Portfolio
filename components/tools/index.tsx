@@ -6,7 +6,7 @@ import { BsTools } from "react-icons/bs";
 
 const Alltools: React.FC = () => {
   return (
-    <section className="tools">
+    <section className="tools" id="tools">
       <h3>
         <span>
           <BsTools className="tools__icon" />
