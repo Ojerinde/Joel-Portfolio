@@ -4,22 +4,34 @@
   border-top: 0.01rem solid rgba($tertiary-light-color, 0.5);
   display: grid;
   place-items: center;
-
+  @media (max-width: $bp-large) {
+    padding: 8rem 1rem;
+  }
   &__up,
   &__down {
     width: 70rem;
     display: flex;
     text-align: center;
+    @media (max-width: $bp-small) {
+      width: 100%;
+    }
   }
 
   &__up {
     justify-content: space-around;
+    @media (max-width: $bp-small) {
+      flex-direction: column;
+    }
 
     & div {
       flex-basis: 30%;
       border: 0.1rem solid rgba($tertiary-light-color, 0.5);
       border-radius: 0.6rem;
       padding: 4rem 0.5rem;
+      @media (max-width: $bp-small) {
+        width: 25rem;
+        margin: 1rem auto;
+      }
       &:nth-child(2) {
         background-color: rgba($tertiary-light-color, 0.2);
         border: none;
@@ -50,9 +62,29 @@
     margin-top: 2.5rem;
     background-color: rgba($tertiary-light-color, 0.1);
     border-radius: 5rem;
-
+    @media (max-width: $bp-medium) {
+      flex-direction: column;
+      background-color: transparent;
+      & div {
+        background-color: rgba($tertiary-light-color, 0.1);
+        padding: 1rem 0;
+        border-radius: 2rem;
+        margin: 0;
+      }
+    }
+    @media (max-width: $bp-small) {
+      justify-content: center;
+      align-items: center;
+      & div {
+        width: 25rem;
+      }
+    }
     & div:not(:last-of-type) {
       margin-right: 2.5rem;
+      @media (max-width: $bp-medium) {
+        margin-bottom: 1.5rem;
+        margin-right: 0;
+      }
     }
     & p {
       color: $tertiary-dark-color;

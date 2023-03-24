@@ -1,5 +1,11 @@
 .blogs {
   padding: 4rem 8rem;
+  @media (max-width: $bp-largest) {
+    padding: 4rem;
+  }
+  @media (max-width: $bp-small) {
+    padding: 2rem 2rem;
+  }
   &__header {
     display: grid;
     place-items: center;
@@ -29,9 +35,21 @@
     width: 60%;
     margin: 10rem auto;
     display: flex;
-
+    @media (max-width: $bp-large) {
+      width: 75%;
+    }
+    @media (max-width: $bp-medium) {
+      width: 85%;
+    }
+    @media (max-width: $bp-small) {
+      width: 95%;
+      flex-direction: column;
+    }
     &--left {
       flex-basis: 50%;
+      @media (max-width: $bp-small) {
+        width: 100%;
+      }
       & h1 {
         color: $tertiary-color;
         font-size: 1.2rem;
@@ -50,6 +68,9 @@
         line-height: 2.5rem;
         border-radius: 1rem;
         background-color: rgba($secondary-light-color, 0.3);
+        @media (max-width: $bp-small) {
+          width: 100%;
+        }
       }
     }
     &--right {
@@ -58,14 +79,26 @@
       background-color: rgba($tertiary-color, 0.3);
       height: 20rem;
       position: relative;
+      @media (max-width: $bp-small) {
+        width: 100%;
+        position: unset;
+        border-top-left-radius: 3rem;
+      }
     }
 
-    & img {
+    & figure {
       position: absolute;
       top: 4rem;
       left: 4rem;
-      border-top-left-radius: 3rem;
       opacity: 0.6;
+      @media (max-width: $bp-small) {
+        position: unset;
+      }
+
+      & img {
+        border-top-left-radius: 3rem;
+        width: 100%;
+      }
     }
   }
 }

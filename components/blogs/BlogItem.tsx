@@ -18,7 +18,9 @@ const BlogItem: React.FC<BlogObj> = ({
       </div>
       <div className="blogs__item--right">
         {/* <figure> */}
-        <Image src={imgUrl} alt={name} width={318} height={160} />
+        <figure>
+          <Image src={imgUrl} alt={name} width={320} height={150} />
+        </figure>
         {/* </figure> */}
       </div>
     </div>

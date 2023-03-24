@@ -8,7 +8,6 @@ const AboutMe: React.FC = () => {
   return (
     <section className="about" id="about">
       <figure className="about__left">
-        {" "}
         <Image
           src="/images/profilepic.png"
           width={250}

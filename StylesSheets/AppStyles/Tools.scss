@@ -2,6 +2,9 @@
   margin: 10rem 0 12rem;
   display: grid;
   place-items: center;
+  @media (max-width: $bp-small) {
+    margin: 5rem 0;
+  }
   & h3 {
     width: fit-content;
     background-color: rgba($tertiary-light-color, 0.1);
@@ -24,6 +27,7 @@
     margin: 4rem 0;
     letter-spacing: 0.2rem;
     word-spacing: 0.2rem;
+    text-align: center;
   }
   h6 {
     font-size: 1.5rem;
@@ -36,12 +40,19 @@
     list-style: none;
     display: flex;
     margin-bottom: 6rem;
+    @media (max-width: $bp-largest) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
   &__item {
     margin: 0 1.5rem;
     background-color: rgba($secondary-color, 0.2);
     padding: 1.5rem;
     border-radius: 50%;
+    @media (max-width: $bp-largest) {
+      margin-bottom: 2rem;
+    }
     & svg {
       width: 4rem;
       height: 4rem;

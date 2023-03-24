@@ -1,6 +1,12 @@
 .contact {
   padding: 4rem 8rem;
   border-top: 0.01rem solid rgba($tertiary-light-color, 0.5);
+  @media (max-width: $bp-largest) {
+    padding: 4rem;
+  }
+  @media (max-width: $bp-small) {
+    padding: 4rem 2rem;
+  }
   &__header {
     display: grid;
     place-items: center;
@@ -35,9 +41,22 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    @media (max-width: $bp-largest) {
+      width: 65%;
+    }
+    @media (max-width: $bp-medium) {
+      width: 80%;
+    }
+    @media (max-width: $bp-small) {
+      width: 95%;
+      flex-direction: column;
+    }
     & a:link {
       text-decoration: none;
+      width: 25rem;
+      @media (max-width: $bp-small) {
+        margin: 1rem 0;
+      }
     }
     & p {
       background-color: rgba($tertiary-light-color, 0.1);

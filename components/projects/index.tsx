@@ -7,9 +7,9 @@ import Pagination from "../Pagination/Pagination";
 const itemPerPage = 8;
 const Projects: React.FC = () => {
   const [start, setStart] = useState<number>(0);
-  const end = start * itemPerPage;
+  const end = start + itemPerPage;
   const changePageHandler = (newStart: number) => {
-    console.log(newStart);
+    console.log(newStart, start, end);
     setStart((prev) => newStart * itemPerPage - itemPerPage);
   };
   return (

@@ -19,7 +19,9 @@ const ProjectItem: React.FC<ProjectsObj> = ({
           <li key={index}>{stack}</li>
         ))}
       </ul>
-      <Image src={imgUrl} alt={name} width={225} height={150} />
+      <figure>
+        <Image src={imgUrl} alt={name} width={1000} height={1000} />
+      </figure>
     </div>
   );
 };
