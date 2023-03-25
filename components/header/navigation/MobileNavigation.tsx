@@ -5,10 +5,22 @@ import { BsMenuAppFill } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
 
 const variants = {
-  open: { opacity: 1, x: 0 },
+  open: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      staggerChildren: 0.5,
+    },
+  },
   closed: { opacity: 0, x: "-100%" },
 };
-
+const item = {
+  hidden: {
+    opacity: 0,
+    x: "100vw",
+  },
+  show: { opacity: 1, x: 0 },
+};
 const MobileNavigation = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -57,15 +69,44 @@ const MobileNavigation = () => {
         </div>
       </div>
       <div className="mobile__navcon">
-        <motion.nav animate={isOpen ? "open" : "closed"} variants={variants}>
-          <ul className="mobile__list">
-            <li onClick={scrollTo.bind(null, "#home")}>Home</li>
-            <li onClick={scrollTo.bind(null, "#about")}>About</li>
-            <li onClick={scrollTo.bind(null, "#portfolio")}>Portfolio</li>
-            <li onClick={scrollTo.bind(null, "#tools")}>Tools</li>
-            <li onClick={scrollTo.bind(null, "#blogs")}>Blogs</li>
-            <li onClick={scrollTo.bind(null, "#contact")}>Contact</li>
-          </ul>
+        <motion.nav>
+          <motion.ul
+            className="mobile__list"
+            initial={{
+              opacity: 0,
+            }}
+            animate={isOpen ? "open" : "closed"}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+            }}
+            variants={variants}
+          >
+            <motion.li variants={item} onClick={scrollTo.bind(null, "#home")}>
+              Home
+            </motion.li>
+            <motion.li variants={item} onClick={scrollTo.bind(null, "#about")}>
+              About
+            </motion.li>
+            <motion.li
+              variants={item}
+              onClick={scrollTo.bind(null, "#portfolio")}
+            >
+              Portfolio
+            </motion.li>
+            <motion.li variants={item} onClick={scrollTo.bind(null, "#tools")}>
+              Tools
+            </motion.li>
+            <motion.li variants={item} onClick={scrollTo.bind(null, "#blogs")}>
+              Blogs
+            </motion.li>
+            <motion.li
+              variants={item}
+              onClick={scrollTo.bind(null, "#contact")}
+            >
+              Contact
+            </motion.li>
+          </motion.ul>
         </motion.nav>
       </div>
     </section>
