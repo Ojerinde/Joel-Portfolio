@@ -96,13 +96,13 @@
       position: relative;
     }
     &__list {
+      height: calc(100vh - 100px);
       position: absolute;
       top: 0;
-      left: 0;
+      left: -3%;
       padding: 3rem 0;
       font-family: "Pacifico", cursive;
       width: 100vw;
-      background-color: transparent;
       display: flex;
       justify-content: center;
       align-items: center;

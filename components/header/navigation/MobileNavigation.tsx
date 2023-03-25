@@ -10,7 +10,7 @@ const variants = {
 };
 
 const MobileNavigation = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(true);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const scrollTo = (to: string) => {
     const section = document?.querySelector(to) as HTMLElement;
@@ -19,7 +19,7 @@ const MobileNavigation = () => {
   };
 
   useEffect(() => {
-    // Sticky navigation
+    // Sticky navigation logic
     const nav = document.querySelector(".mobile") as HTMLElement;
     const header = document.querySelector("#header") as HTMLElement;
 
