@@ -1,13 +1,34 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
+import MobileNavigation from "./MobileNavigation";
 const Navigation: React.FC = () => {
   const scrollTo = (to: string) => {
     const section = document?.querySelector(to) as HTMLElement;
     section.scrollIntoView({ behavior: "smooth" });
   };
+  useEffect(() => {
+    // Sticky navigation
+    const nav = document.querySelector("#nav") as HTMLElement;
+    const header = document.querySelector("#header") as HTMLElement;
+
+    const stickyNav = function (entries: any) {
+      const [entry] = entries;
+
+      if (!entry.isIntersecting) nav.classList.add("sticky");
+      else nav.classList.remove(`sticky`);
+    };
+
+    const headerObserver = new IntersectionObserver(stickyNav, {
+      root: null,
+      threshold: 0,
+    });
+
+    headerObserver.observe(header);
+  });
+
   return (
     <>
-      <nav className="navigation desktop">
+      <nav className="navigation desktop" id="nav">
         <figure>
           <Image
             src="/images/logo.png"
@@ -26,43 +47,8 @@ const Navigation: React.FC = () => {
         </ul>
       </nav>
 
-      {/* <nav className="mobile__navigation mobile">
-        <div className="mobile__header">
-          <figure className="mobile__logo">
-            <img src="./assets/logo.png" alt="" />
-          </figure>
-          {!open ? (
-            <BsFillMenuButtonWideFill
-              onClick={() => setOpen((prev) => !prev)}
-              className="mobile__icon"
-            />
-          ) : (
-            <IoMdClose
-              onClick={() => setOpen((prev) => !prev)}
-              className="mobile__icon"
-            />
-          )}
-        </div>
-        {open && (
-          <ul onClick={clickedHandler} className="mobile__list">
-            <li href="home" className="mobile__item">
-              Home
-            </li>
-            <li href="about" className="mobile__item">
-              About
-            </li>
-            <li href="portfolio" className="mobile__item">
-              Portfolio
-            </li>
-            <li href="blog" className="mobile__item">
-              Blog
-            </li>
-            <li href="contact" className="mobile__item">
-              Contact
-            </li>
-          </ul>
-        )}
-      </nav> */}
+      {/* Mobile Navigation */}
+      <MobileNavigation />
     </>
   );
 };

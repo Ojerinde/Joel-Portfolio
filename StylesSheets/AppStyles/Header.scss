@@ -11,6 +11,9 @@
       flex-direction: column;
       text-align: center;
     }
+    @media (max-width: $bp-small) {
+      margin: 3rem 0 10rem;
+    }
   }
   &__left {
     @media (max-width: $bp-large) {

@@ -70,6 +70,7 @@
         background-color: rgba($secondary-light-color, 0.3);
         @media (max-width: $bp-small) {
           width: 100%;
+          border-top-left-radius: 4rem;
         }
       }
     }
@@ -82,7 +83,7 @@
       @media (max-width: $bp-small) {
         width: 100%;
         position: unset;
-        border-top-left-radius: 3rem;
+        border-bottom-right-radius: 4rem;
       }
     }
 
@@ -96,7 +97,8 @@
       }
 
       & img {
-        border-top-left-radius: 3rem;
+        // border-bottom-left-radius: 4rem;
+        border-bottom-right-radius: 4rem;
         width: 100%;
       }
     }
