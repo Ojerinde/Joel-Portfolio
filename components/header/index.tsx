@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { delay, motion } from "framer-motion";
 
 import Image from "next/image";
 import React from "react";
@@ -12,11 +12,14 @@ import {
 } from "react-icons/fa";
 
 const container = {
-  hidden: { opacity: 0 },
+  hidden: {},
   show: {
-    opacity: 1,
     transition: {
       staggerChildren: 0.5,
+      delay: 0.2,
+      ease: "linear",
+      duration: 5,
+      repeat: Infinity,
     },
   },
 };
@@ -26,9 +29,6 @@ const item = {
     opacity: 0,
     x: "100vw",
     rotate: "360",
-    transition: {
-      duration: 5,
-    },
   },
   show: { opacity: 1, x: 0, rotate: 0 },
 };
@@ -68,21 +68,39 @@ const Header: React.FC = () => {
           </motion.ul>
         </div>
         <figure>
-          <Image
+          <motion.img
             src="/images/headerImg.png"
             width={300}
             height={300}
             alt="Empty closing tag"
+            whileInView={{
+              x: [0, 100, 0, -100, 0],
+              transition: {
+                times: [0, 0.25, 0.5, 0.75, 1],
+                duration: 5,
+                repeat: Infinity,
+                ease: "linear",
+              },
+            }}
           />
+          {/* <Image
+              src="/images/headerImg.png"
+              width={300}
+              height={300}
+              alt="Empty closing tag"
+              variants={imgItem}
+            />
+          */}
         </figure>
         <div className="header__right">
           <a href="CV.pdf" download>
-            <motion.p whileHover={{ scale: 1.5, y: "-20%" }}>
+            <motion.p whileHover={{ scale: 1.4, y: "-20%" }}>
               Download CV
               <motion.span
-                initial={{ y: "-30%" }}
+                initial={{ y: -30, scale: 0.8 }}
                 animate={{
-                  y: "0%",
+                  y: 0,
+                  scale: 1.2,
                   transition: {
                     repeat: Infinity,
                     duration: 2,
@@ -96,7 +114,18 @@ const Header: React.FC = () => {
           </a>
           <a href="https://wa.me/2348143368703" target="_blank">
             <motion.p whileHover={{ scale: 1.5, y: "20%" }}>
-              <motion.span>
+              <motion.span
+                initial={{ x: -20, scale: 0.8 }}
+                animate={{
+                  x: 0,
+                  scale: 1.2,
+                  transition: {
+                    repeat: Infinity,
+                    duration: 2,
+                    repeatType: "reverse",
+                  },
+                }}
+              >
                 <FaWhatsapp className="header__right--icon" />
               </motion.span>
               {"Let's talk"}

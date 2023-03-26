@@ -73,6 +73,26 @@
           border-top-left-radius: 4rem;
         }
       }
+      & a {
+        &:link {
+          text-decoration: none;
+          color: $tertiary-light-color;
+          background-color: transparent;
+          font-size: 1.6rem;
+          display: block;
+          margin: 2rem 0;
+          width: fit-content;
+          letter-spacing: 0.1rem;
+          padding: 0.7rem 1.2rem;
+          border-radius: 0.6rem;
+          transition: all 0.4s;
+        }
+        &:hover {
+          color: $tertiary-dark-color;
+          letter-spacing: 0.3rem;
+          background-color: $secondary-light-color;
+        }
+      }
     }
     &--right {
       flex-basis: 50%;

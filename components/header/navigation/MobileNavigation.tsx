@@ -5,21 +5,38 @@ import { BsMenuAppFill } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
 
 const variants = {
-  open: {
+  show: {
     opacity: 1,
     x: 0,
+    y: 0,
     transition: {
-      staggerChildren: 0.5,
+      type: "spring",
+      stiffness: 100,
+      delayChildren: 0.5,
+      staggerChildren: 0.4,
     },
   },
-  closed: { opacity: 0, x: "-100%" },
+  hidden: {
+    opacity: 0,
+    x: "100%",
+    y: "100%",
+    transition: {
+      when: "afterChildren",
+      type: "spring",
+      stiffness: 200,
+      damping: 50,
+    },
+  },
+  initial: { opacity: 0, x: "-50%", y: "-50%" },
 };
+
 const item = {
   hidden: {
     opacity: 0,
-    x: "100vw",
+    x: "100%",
+    y: "100%",
   },
-  show: { opacity: 1, x: 0 },
+  show: { opacity: 1, x: 0, y: 0 },
 };
 const MobileNavigation = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -72,14 +89,8 @@ const MobileNavigation = () => {
         <motion.nav>
           <motion.ul
             className="mobile__list"
-            initial={{
-              opacity: 0,
-            }}
-            animate={isOpen ? "open" : "closed"}
-            transition={{
-              type: "spring",
-              stiffness: 100,
-            }}
+            initial="initial"
+            animate={isOpen ? "show" : "hidden"}
             variants={variants}
           >
             <motion.li variants={item} onClick={scrollTo.bind(null, "#home")}>
