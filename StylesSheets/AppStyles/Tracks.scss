@@ -87,17 +87,17 @@
       }
     }
     & p {
-      color: $tertiary-dark-color;
+      color: $secondary-dark-color;
       font-size: 1.4rem;
       font-family: "Pacifico", cursive;
       letter-spacing: 0.15rem;
     }
     & h2 {
       margin-top: 0.7rem;
-      color: $tertiary-dark-color;
       font-size: 1.7rem;
       font-family: "Yatra One", cursive;
       letter-spacing: 0.15rem;
+      color: $tertiary-dark-color;
     }
   }
 }
