@@ -3,6 +3,7 @@ import ProjectItem from "./ProjectItem";
 import ProjectsBank from "./ProjectsBank";
 import { BsProjector } from "react-icons/bs";
 import Pagination from "../Pagination/Pagination";
+import { AnimatePresence, motion } from "framer-motion";
 
 const itemPerPage = 8;
 const Projects: React.FC = () => {
@@ -12,6 +13,7 @@ const Projects: React.FC = () => {
     console.log(newStart, start, end);
     setStart((prev) => newStart * itemPerPage - itemPerPage);
   };
+
   return (
     <section className="projects" id="portfolio">
       <h3>

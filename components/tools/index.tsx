@@ -3,6 +3,7 @@ import ToolItem from "./ToolItem";
 import ProficientToolsBank, { ModerateToolsBank } from "./ToolsBank";
 import { ToolsObj } from "./ToolsBank";
 import { BsTools } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 const Alltools: React.FC = () => {
   return (
@@ -15,7 +16,7 @@ const Alltools: React.FC = () => {
       </h3>
       <h4>Technologies and skills</h4>
       <h6>Techs. I am proficient at</h6>
-      <ul className="tools__list">
+      <motion.ul className="tools__list">
         {ProficientToolsBank.map((tool: ToolsObj) => (
           <ToolItem
             key={tool.id}
@@ -25,9 +26,9 @@ const Alltools: React.FC = () => {
             docUrl={tool.docUrl}
           />
         ))}
-      </ul>
+      </motion.ul>
       <h6>Techs. I have worked with</h6>
-      <ul className="tools__list">
+      <motion.ul className="tools__list">
         {ModerateToolsBank.map((tool: ToolsObj) => (
           <ToolItem
             key={tool.id}
@@ -37,7 +38,7 @@ const Alltools: React.FC = () => {
             docUrl={tool.docUrl}
           />
         ))}
-      </ul>
+      </motion.ul>
     </section>
   );
 };
