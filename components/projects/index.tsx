@@ -14,6 +14,7 @@ const Projects: React.FC = () => {
     setStart((prev) => newStart * itemPerPage - itemPerPage);
   };
 
+
   return (
     <section className="projects" id="portfolio">
       <h3>
