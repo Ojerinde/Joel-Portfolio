@@ -38,6 +38,7 @@ const item = {
   },
   show: { opacity: 1, x: 0, y: 0 },
 };
+
 const MobileNavigation = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 

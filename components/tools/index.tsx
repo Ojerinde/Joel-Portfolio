@@ -6,23 +6,34 @@ import { BsTools } from "react-icons/bs";
 import { motion } from "framer-motion";
 
 const variants = {
-  // open: {
-  //   transition: { staggerChildren: 0.4, delayChildren: 1 },
-  // },
-  // closed: {
-  //   transition: { staggerChildren: 0.05, staggerDirection: -1 },
-  // },
+  show: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      delayChildren: 0.5,
+      staggerChildren: 0.4,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    x: "100%",
+    y: "100%",
+    transition: {
+      when: "afterChildren",
+      type: "spring",
+      stiffness: 200,
+      damping: 50,
+    },
+  },
+  initial: { opacity: 0, x: "-50%", y: "-50%" },
 };
 
 const Alltools: React.FC = () => {
   return (
-    <motion.section
-      className="tools"
-      id="tools"
-      variants={variants}
-      whileInView="open"
-      exit="closed"
-    >
+    <section className="tools" id="tools">
       <h3>
         <span>
           <BsTools className="tools__icon" />
@@ -31,7 +42,13 @@ const Alltools: React.FC = () => {
       </h3>
       <h4>Technologies and skills</h4>
       <h6>Techs. I am proficient at</h6>
-      <ul className="tools__list">
+      <motion.ul
+        className="tools__list"
+        variants={variants}
+        initial="initial"
+        animate="show"
+        exit="hidden"
+      >
         {ProficientToolsBank.map((tool: ToolsObj) => (
           <ToolItem
             key={tool.id}
@@ -41,7 +58,7 @@ const Alltools: React.FC = () => {
             docUrl={tool.docUrl}
           />
         ))}
-      </ul>
+      </motion.ul>
       <h6>Techs. I have worked with</h6>
       <ul className="tools__list">
         {ModerateToolsBank.map((tool: ToolsObj) => (
@@ -54,7 +71,7 @@ const Alltools: React.FC = () => {
           />
         ))}
       </ul>
-    </motion.section>
+    </section>
   );
 };
 export default Alltools;
