@@ -77,7 +77,8 @@
         }
       }
       & a {
-        &:link {
+        &:link,
+        &:visited {
           text-decoration: none;
           color: $tertiary-light-color;
           background-color: transparent;

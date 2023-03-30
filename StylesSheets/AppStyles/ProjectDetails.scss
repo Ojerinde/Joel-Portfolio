@@ -1,0 +1,142 @@
+.project {
+  &__details {
+    background-color: $secondary-light-color;
+    width: 100%;
+    padding: 2rem 4rem;
+    margin: 0 auto;
+    overflow-y: scroll;
+    height: 90vh;
+    @media (max-width: $bp-small) {
+      padding: 2rem;
+    }
+
+    & button {
+      padding: 1rem 3rem;
+      border-radius: 2rem;
+      border: 0.1rem solid transparent;
+      cursor: pointer;
+      font-weight: 400;
+      letter-spacing: 0.02rem;
+      background-color: rgba($tertiary-dark-color, 0.4);
+      &:hover {
+        background-color: rgba($tertiary-dark-color, 0.8);
+        border: 0.1rem solid $tertiary-dark-color;
+      }
+    }
+    & h1 {
+      color: $primary-color;
+      font-size: 3.5rem;
+      letter-spacing: 0.3rem;
+      margin: 1rem 0;
+      text-align: center;
+    }
+    & p {
+      margin-top: 1rem;
+      color: $primary-light-color;
+      font-size: 1.6rem;
+      line-height: 3rem;
+      font-weight: 400;
+      letter-spacing: 0.06rem;
+    }
+    & span {
+      display: block;
+      font-weight: 600;
+      font-size: 2rem;
+      text-align: center;
+      margin-top: 4rem;
+      color: $tertiary-color;
+      letter-spacing: 0.2rem;
+    }
+    & ul {
+      margin: 1rem 0 2.5rem;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      & li {
+        margin-right: 1rem;
+        background-color: rgba($tertiary-dark-color, 0.4);
+        font-size: 1.4rem;
+        color: $primary-color;
+        padding: 0.6rem 1.3rem;
+        border-radius: 0.6rem;
+      }
+    }
+    & figure {
+      border-radius: 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // width: 100%;
+      margin: 2rem auto;
+      box-shadow: $box-shadow;
+      overflow: hidden;
+
+      & img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &__icons {
+      margin: 3rem auto 5rem;
+      display: flex;
+      justify-content: flex-start;
+
+      &--box {
+        background-color: $primary-light-color;
+        position: relative;
+        width: 4rem;
+        height: 4rem;
+        margin: 3rem 0 0 2rem;
+        border-radius: 50%;
+        display: block;
+        padding: 3rem;
+        border: 0.5rem solid rgba($tertiary-dark-color, 0.4);
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover {
+          background-color: $tertiary-color;
+        }
+        &:hover > .icon {
+          fill: $secondary-light-color;
+        }
+
+        & svg.icon {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          height: 3rem;
+          width: 3rem;
+          fill: $secondary-color;
+          transition: all 0.3s;
+        }
+      }
+    }
+    &--title {
+      clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 80%,
+        65% 80%,
+        50% 100%,
+        45% 80%,
+        0 80%
+      );
+      background-color: $tertiary-color;
+      box-shadow: 0 1rem 2rem $secondary-color;
+      padding: 1rem 1.5rem 2rem;
+      color: $secondary-color;
+      font-size: 1.3rem;
+      letter-spacing: 0.1rem;
+      position: absolute;
+      top: -57%;
+      left: 48%;
+      white-space: nowrap;
+      border-radius: 1rem;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
