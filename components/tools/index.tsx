@@ -8,27 +8,19 @@ import { motion } from "framer-motion";
 const variants = {
   show: {
     opacity: 1,
-    x: 0,
-    y: 0,
     transition: {
-      type: "spring",
-      stiffness: 100,
-      delayChildren: 0.5,
+      delayChildren: 0.2,
       staggerChildren: 0.4,
     },
   },
-  hidden: {
-    opacity: 0,
-    x: "100%",
-    y: "100%",
+  slide: {
+    opacity: 1,
     transition: {
-      when: "afterChildren",
-      type: "spring",
-      stiffness: 200,
-      damping: 50,
+      delayChildren: 0.2,
+      staggerChildren: 0.4,
     },
   },
-  initial: { opacity: 0, x: "-50%", y: "-50%" },
+  hidden: { opacity: 0, x: 0, y: 0 },
 };
 
 const Alltools: React.FC = () => {
@@ -45,9 +37,8 @@ const Alltools: React.FC = () => {
       <motion.ul
         className="tools__list"
         variants={variants}
-        initial="initial"
+        initial="hidden"
         animate="show"
-        exit="hidden"
       >
         {ProficientToolsBank.map((tool: ToolsObj) => (
           <ToolItem
@@ -60,7 +51,12 @@ const Alltools: React.FC = () => {
         ))}
       </motion.ul>
       <h6>Techs. I have worked with</h6>
-      <ul className="tools__list">
+      <motion.ul
+        className="tools__list"
+        variants={variants}
+        initial="hidden"
+        animate="slide"
+      >
         {ModerateToolsBank.map((tool: ToolsObj) => (
           <ToolItem
             key={tool.id}
@@ -70,7 +66,7 @@ const Alltools: React.FC = () => {
             docUrl={tool.docUrl}
           />
         ))}
-      </ul>
+      </motion.ul>
     </section>
   );
 };

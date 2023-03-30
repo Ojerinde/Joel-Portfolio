@@ -25,6 +25,9 @@ main {
 /* width */
 ::-webkit-scrollbar {
   width: 1.4rem;
+  @media (max-width: $bp-small) {
+    width: 1rem;
+  }
 }
 
 /* Track */
